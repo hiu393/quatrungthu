@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quà Trung thu 🎁</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    #question {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    #yesBtn {
+      background-color: #4CAF50;
+      color: white;
+      position: absolute;
+    }
+
+    #noBtn {
+      background-color: #f44336;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="question">Lấy quà Trung thu không? 🎉</div>
+
+  <button class="btn" id="yesBtn">Có</button>
+  <button class="btn" id="noBtn">Không</button>
+
+  <script>
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+
+    // Căn giữa ban đầu nút "Có"
+    yesBtn.style.left = "50%";
+    yesBtn.style.top = "50%";
+    yesBtn.style.transform = "translate(-50%, -50%)";
+
+    yesBtn.addEventListener('click', () => {
+      // Tạo vị trí ngẫu nhiên trong cửa sổ trình duyệt
+      const x = Math.random() * (window.innerWidth - 100); // Trừ kích thước nút
+      const y = Math.random() * (window.innerHeight - 50);
+      yesBtn.style.left = x + "px";
+      yesBtn.style.top = y + "px";
+    });
+
+    noBtn.addEventListener('click', () => {
+      alert("V thì thôi nhé 😢");
+    });
+  </script>
+
+</body>
+</html>
